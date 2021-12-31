@@ -1,0 +1,22 @@
+{
+  "name": "Inv App",
+  "short_name": "Invi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "./",
+      "accept": {
+        "image/*": [".jpg", ".jpeg", ".webp", ".png", ".avif", ".gif", ".svg"]
+      }
+    }
+  ]
+}
