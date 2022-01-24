@@ -1,0 +1,8 @@
+#canvas {
+  position: absolute;
+  opacity: 0;
+}
+
+.main-content {
+  text-align: center;
+}

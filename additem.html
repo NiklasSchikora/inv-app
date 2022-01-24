@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="./icon.png" />
+    <title>Inv App</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/uikit/uikit.min.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/uikit/uikit.min.js"></script>
+    <script src="./js/uikit/uikit-icons.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar-->
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+          <li><a href="/">Scan Item</a></li>
+          <li class="uk-active"><a href="">Add Item</a></li>
+          <li><a href="">Item List</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="uk-container uk-margin">
+      <form>
+        <fieldset class="uk-fieldset">
+          <legend class="uk-legend">Add a new item</legend>
+
+          <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-text">Name</label>
+            <div class="uk-form-controls">
+              <input
+                class="uk-input"
+                id="db-name"
+                type="text"
+                placeholder="Produkt ..."
+              />
+            </div>
+          </div>
+
+          <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-text"
+              >Produktnummer</label
+            >
+            <div class="uk-form-controls">
+              <input
+                class="uk-input"
+                id="db-pnum"
+                type="text"
+                placeholder="Produkt ..."
+              />
+            </div>
+          </div>
+
+          <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-text"
+              >Seriennummer</label
+            >
+            <div class="uk-form-controls">
+              <input
+                class="uk-input"
+                id="db-snum"
+                type="text"
+                placeholder="Produkt ..."
+              />
+            </div>
+          </div>
+
+          <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-text"
+              >Produkttyp</label
+            >
+            <div class="uk-form-controls">
+              <div class="uk-margin">
+                <select id="db-type" class="uk-select">
+                  <option value="pc">PC / Laptop</option>
+                  <option value="peripheral">Peripherie / Eingabegerät</option>
+                  <option value="photoequipment">Photo / Videoequipment</option>
+                  <option value="office-supplys">Bürobedarf</option>
+                  <option value="other">Anderes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-text"
+              >Abteilung</label
+            >
+            <div class="uk-form-controls">
+              <div class="uk-margin">
+                <select id="db-branch" class="uk-select">
+                  <option value="graphics">Grafik</option>
+                  <option value="multimedia">Multimedia</option>
+                  <option value="corporate">Geschäftsleitung</option>
+                  <option value="pm">Projektmanagement</option>
+                  <option value="hr">Human Resources</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <button id="testButton">Test</button>
+    </div>
+  </body>
+</html>

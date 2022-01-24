@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/uikit/uikit.min.css" />
     <link rel="manifest" href="./manifest.json" />
     <script src="./js/index.js" type="module"></script>
+    <script src="./js/barcodeDetection.js" type="module"></script>
     <script src="./js/uikit/uikit.min.js"></script>
     <script src="./js/uikit/uikit-icons.min.js"></script>
   </head>
@@ -18,15 +19,21 @@
     <nav class="uk-navbar-container" uk-navbar>
       <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
-          <li class="uk-active"><a href="">Home</a></li>
-          <li class="uk-parent"><a href="">Items</a></li>
-          <li><a href="">Anderes</a></li>
+          <li class="uk-active"><a href="">Scan Item</a></li>
+          <li class="uk-parent"><a href="/additem.html">Add Item</a></li>
+          <li><a href="">Item List</a></li>
         </ul>
       </div>
     </nav>
-    <!-- Container -->
-    <div class="uk-container">
-      <p>Content</p>
+    <!-- Container for Scanning -->
+    <div class="uk-container main-content">
+      <br />
+      <div class="camera">
+        <video id="video">Stream not available</video>
+      </div>
+      <button id="startbutton">Foto aufnehmen</button>
+      <canvas id="canvas"> </canvas>
+      <p id="scan-result">Scanned item:</p>
     </div>
   </body>
 </html>
