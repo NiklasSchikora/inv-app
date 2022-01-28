@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="../icon.png" />
+    <title>Inv App</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/uikit/uikit.min.css" />
+    <link rel="manifest" href="../manifest.json" />
+    <script src="../js/index.js" type="module"></script>
+    <script src="../js/itemlist.js" type="module"></script>
+    <script src="../js/uikit/uikit.min.js"></script>
+    <script src="../js/uikit/uikit-icons.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar-->
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+          <li><a href="/">Scan Item</a></li>
+          <li><a href="additem.html">Add Item</a></li>
+          <li class="uk-active"><a href="itemList.html">Item List</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content-->
+    <div class="uk-container" id="item-list">
+      <h2 class="uk-margin-top">Inventar List</h2>
+      <table class="uk-table uk-table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Produktnummer</th>
+            <th>Seriennummer</th>
+            <th>Abteilung</th>
+            <th>Kategorie</th>
+          </tr>
+        </thead>
+        <tbody id="item-table"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

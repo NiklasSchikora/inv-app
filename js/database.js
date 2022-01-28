@@ -4,7 +4,9 @@ import {
   collection,
   addDoc,
   getDoc,
+  getDocs,
   doc,
+  query,
 } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -50,4 +52,14 @@ export const getItemFromDb = async (itemID) => {
     console.log("Data: " + docSnap.data().name);
     return docSnap.data();
   }
+};
+
+export const getItemList = async () => {
+  let colRef = collection(db, "items");
+  let q = query(colRef);
+  let res = await getDocs(q);
+  res.forEach((doc) => {
+    console.log(doc.id + " => " + JSON.stringify(doc.data()));
+  });
+  return res;
 };
