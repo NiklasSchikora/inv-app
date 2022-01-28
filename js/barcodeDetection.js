@@ -1,4 +1,5 @@
 import { dataURItoBlob } from "./helpers.js";
+import { getItemFromDb } from "./database.js";
 
 (function () {
   var width = 520;
@@ -11,6 +12,7 @@ import { dataURItoBlob } from "./helpers.js";
   var startbutton = null;
 
   function startup() {
+    console.log("asdas RUN");
     video = document.getElementById("video");
     canvas = document.getElementById("canvas");
     startbutton = document.getElementById("startbutton");
@@ -99,12 +101,18 @@ import { dataURItoBlob } from "./helpers.js";
       });
       try {
         const barcodes = await barcodeDetector.detect(canvas);
-        barcodes.forEach((barcode) => {
+        barcodes.forEach(async (barcode) => {
           console.log(barcode);
           console.log(barcode.rawValue);
           console.log(barcode.format);
           document.getElementById("scan-result").innerHTML =
             "Scanned item: " + barcode.rawValue;
+          let data = await getItemFromDb(barcode.rawValue);
+          document.getElementById("sc-name").innerHTML = data.name;
+          document.getElementById("sc-snum").innerHTML = data.serialNumber;
+          document.getElementById("sc-pnum").innerHTML = data.productNumber;
+          document.getElementById("sc-dep").innerHTML = data.department;
+          document.getElementById("sc-cat").innerHTML = data.category;
         });
       } catch (e) {
         console.error("Barcode detection failed:", e);
@@ -116,5 +124,7 @@ import { dataURItoBlob } from "./helpers.js";
 
   // Set up our event listener to run the startup process
   // once loading is complete.
-  window.addEventListener("load", startup, false);
+  startup();
+  // window.addEventListener("load", () => startup(), false);
+  console.log("Run");
 })();

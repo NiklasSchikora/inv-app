@@ -1,4 +1,6 @@
-function dataURItoBlob(dataURI) {
+import "./JsBarcode.all.min.js";
+
+const dataURItoBlob = (dataURI) => {
   // convert base64 to raw binary data held in a string
   // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
   var byteString = atob(dataURI.split(",")[1]);
@@ -20,6 +22,10 @@ function dataURItoBlob(dataURI) {
   // write the ArrayBuffer to a blob, and you're done
   var blob = new Blob([ab], { type: mimeString });
   return blob;
-}
+};
 
-export { dataURItoBlob };
+const generateBarcode = (codeID) => {
+  JsBarcode("#barcode", codeID);
+};
+
+export { dataURItoBlob, generateBarcode };

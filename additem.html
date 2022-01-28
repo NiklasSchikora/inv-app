@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/uikit/uikit.min.css" />
     <link rel="manifest" href="./manifest.json" />
     <script src="./js/index.js" type="module"></script>
+    <script src="./js/addItem.js" type="module"></script>
     <script src="./js/uikit/uikit.min.js"></script>
     <script src="./js/uikit/uikit-icons.min.js"></script>
   </head>
@@ -104,7 +105,19 @@
           </div>
         </fieldset>
       </form>
-      <button id="testButton">Test</button>
+      <div class="uk-flex uk-flex-center uk-width-1-1 uk-margin-bottom">
+        <svg id="barcode"></svg>
+      </div>
+      <div class="controlls uk-container">
+        <div class="uk-flex uk-flex-center uk-width-1-1">
+          <button class="uk-button uk-button-primary" id="addButton">
+            Add item
+          </button>
+          <a href="/" class="uk-button uk-button-danger uk-margin-left">
+            Cancel
+          </a>
+        </div>
+      </div>
     </div>
   </body>
 </html>

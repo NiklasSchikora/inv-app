@@ -3,6 +3,8 @@ import {
   getFirestore,
   collection,
   addDoc,
+  getDoc,
+  doc,
 } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -34,7 +36,18 @@ export const addItemToDb = async (
       department: department,
     });
     console.log("Document written with ID: ", docRef.id);
+    return docRef.id;
   } catch (e) {
     console.error("Error adding document: ", e);
+  }
+};
+
+export const getItemFromDb = async (itemID) => {
+  let docRef = doc(db, "items", itemID);
+  let docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Data: " + docSnap.data().name);
+    return docSnap.data();
   }
 };

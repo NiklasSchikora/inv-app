@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./styles/uikit/uikit.min.css" />
     <link rel="manifest" href="./manifest.json" />
     <script src="./js/index.js" type="module"></script>
-    <script src="./js/barcodeDetection.js" type="module"></script>
     <script src="./js/uikit/uikit.min.js"></script>
     <script src="./js/uikit/uikit-icons.min.js"></script>
   </head>
@@ -34,6 +33,36 @@
       <button id="startbutton">Foto aufnehmen</button>
       <canvas id="canvas"> </canvas>
       <p id="scan-result">Scanned item:</p>
+    </div>
+    <div class="scanned-item uk-container uk-margin-top">
+      <div class="uk-flex uk-flex-center">
+        <h3>Scanned Item</h3>
+      </div>
+      <div class="uk-flex uk-flex-center">
+        <p class="uk-flex-middle">
+          <b>Product Name: </b> <span id="sc-name">Product</span>
+        </p>
+      </div>
+      <div class="uk-flex uk-flex-center">
+        <p class="uk-flex-middle">
+          <b>Product Number: </b> <span id="sc-pnum">012345</span>
+        </p>
+      </div>
+      <div class="uk-flex uk-flex-center">
+        <p class="uk-flex-middle">
+          <b>Serial Number: </b> <span id="sc-snum">012345</span>
+        </p>
+      </div>
+      <div class="uk-flex uk-flex-center">
+        <p class="uk-flex-middle">
+          <b>Department: </b> <span id="sc-dep">Department</span>
+        </p>
+      </div>
+      <div class="uk-flex uk-flex-center">
+        <p class="uk-flex-middle">
+          <b>Category: </b> <span id="sc-cat">Category</span>
+        </p>
+      </div>
     </div>
   </body>
 </html>
