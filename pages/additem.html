@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/uikit/uikit.min.css" />
     <link rel="manifest" href="../manifest.json" />
+
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+
     <script src="../js/index.js" type="module"></script>
     <script src="../js/addItem.js" type="module"></script>
     <script src="../js/uikit/uikit.min.js"></script>
@@ -116,6 +119,9 @@
           <a href="/" class="uk-button uk-button-danger uk-margin-left">
             Cancel
           </a>
+          <button class="uk-button uk-button-primary" id="syncButton">
+            Sync Items
+          </button>
         </div>
       </div>
     </div>
