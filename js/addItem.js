@@ -10,11 +10,12 @@ document.getElementById("addButton").addEventListener("click", async () => {
   let branch = document.getElementById("db-branch").value;
   console.log(name + " " + pnum + " " + snum + " " + type + " " + branch);
   if (navigator.onLine) {
-    // Falls eine Verbindung besteht, wird das Item sofort hinzugefügt
+    // If there is a connection, push changes to database / add new item
     let code = await addItemToDb(name, pnum, snum, type, branch);
     generateBarcode(code);
   } else {
-    // Falls der Status offline ist wird das neue Item Gecached und später synchronisiert
+    // If offline, cache the item to IndexedDB and sync it later
+    // To be done: Barcode-handeling while offline (maybe with Firebase offline ID-API)
     cacheAddItem(name, pnum, snum, type, branch);
   }
 });
