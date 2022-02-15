@@ -1,9 +1,13 @@
 {
   "name": "Inv App",
   "short_name": "Invi",
+  "description": "Demo Inv-Application for DHBW",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "./icon.png",

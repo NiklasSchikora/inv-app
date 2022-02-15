@@ -1,3 +1,5 @@
+// Service worker implementation used from browser-api-lecture by Thomas Steiner (https://github.com/tomayac)
+
 self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
