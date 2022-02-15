@@ -18,7 +18,12 @@ import { getItemFromDb } from "./database.js";
     startbutton = document.getElementById("startbutton");
 
     navigator.mediaDevices
-      .getUserMedia({ video: true, audio: false })
+      .getUserMedia({
+        video: {
+          facingMode: "environment",
+        },
+        audio: false,
+      })
       .then(function (stream) {
         video.srcObject = stream;
         video.play();
